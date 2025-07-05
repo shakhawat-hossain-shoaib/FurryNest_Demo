@@ -3,55 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glassmorphism Demo</title>
-</head>
-<body>
-    <div class="background">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
-
-    <div class="container">
-        <header class="glass-card">
-            <h1>Welcome to Glass World</h1>
-            <p>Experience the future of UI design</p>
-        </header>
-
-        <main>
-            <div class="glass-card feature-card">
-                <h2>Premium Features</h2>
-                <p>Unlock exclusive content with our membership</p>
-                <div class="price-display">$9.99<span>/month</span></div>
-                <button class="cta-button" id="subscribeBtn">Subscribe Now</button>
-            </div>
-
-            <div class="glass-card stats-card">
-                <div class="stat-item">
-                    <div class="stat-value" id="userCount">0</div>
-                    <div class="stat-label">Active Users</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="downloadCount">0</div>
-                    <div class="stat-label">Downloads</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="ratingValue">0</div>
-                    <div class="stat-label">Rating</div>
-                </div>
-            </div>
-
-            <div class="glass-card form-card">
-                <h2>Get Started</h2>
-                <form id="signupForm">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <button type="submit" class="cta-button">Join Free</button>
-                </form>
-            </div>
-        </main>
-    </div>
-
+    <title>Glassmorphism Nord Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -62,8 +15,8 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            color: white;
+            background: linear-gradient(135deg, #2E3440, #3B4252);
+            color: #D8DEE9;
             overflow-x: hidden;
         }
 
@@ -80,13 +33,13 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(60px);
-            opacity: 0.6;
+            opacity: 0.4;
         }
 
         .shape-1 {
             width: 300px;
             height: 300px;
-            background: #ff5e62;
+            background: #8FBCBB;
             top: 20%;
             left: 10%;
             animation: float 8s ease-in-out infinite;
@@ -95,7 +48,7 @@
         .shape-2 {
             width: 400px;
             height: 400px;
-            background: #4facfe;
+            background: #88C0D0;
             bottom: 15%;
             right: 10%;
             animation: float 10s ease-in-out infinite;
@@ -104,7 +57,7 @@
         .shape-3 {
             width: 200px;
             height: 200px;
-            background: #a6ffcb;
+            background: #81A1C1;
             top: 60%;
             left: 30%;
             animation: float 6s ease-in-out infinite;
@@ -122,12 +75,12 @@
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(46, 52, 64, 0.3);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            border: 1px solid rgba(129, 161, 193, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
             padding: 30px;
             margin-bottom: 30px;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -135,7 +88,8 @@
 
         .glass-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+            background: rgba(46, 52, 64, 0.4);
         }
 
         header {
@@ -146,12 +100,13 @@
         h1 {
             font-size: 3rem;
             margin-bottom: 15px;
+            color: #ECEFF4;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            opacity: 0.8;
         }
 
         main {
@@ -168,17 +123,19 @@
             font-size: 3.5rem;
             font-weight: bold;
             margin: 20px 0;
+            color: #A3BE8C;
         }
 
         .price-display span {
             font-size: 1rem;
             opacity: 0.8;
+            color: #D8DEE9;
         }
 
         .cta-button {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(136, 192, 208, 0.3);
             border: none;
-            color: white;
+            color: #ECEFF4;
             padding: 12px 30px;
             border-radius: 50px;
             font-size: 1rem;
@@ -187,33 +144,73 @@
             transition: all 0.3s;
             width: 100%;
             backdrop-filter: blur(5px);
+            margin-top: 10px;
         }
 
         .cta-button:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(136, 192, 208, 0.4);
             transform: scale(1.05);
         }
 
+        /* Stats Card - New Design */
         .stats-card {
             display: flex;
-            justify-content: space-around;
-            align-items: center;
-            text-align: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            text-align: right;
         }
 
         .stat-item {
-            padding: 0 15px;
+            flex: 1;
+            min-width: 150px;
+            padding: 25px 20px;
+            background: rgba(67, 76, 94, 0.3);
+            border-radius: 16px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(129, 161, 193, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px);
+            background: rgba(76, 86, 106, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #88C0D0, #5E81AC);
         }
 
         .stat-value {
             font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 5px;
+            font-weight: 800;
+            color: #ECEFF4;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
         }
 
         .stat-label {
-            opacity: 0.8;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            color: #D8DEE9;
+            font-weight: 500;
+        }
+
+        .stat-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: rgba(216, 222, 233, 0.3);
         }
 
         .form-card input {
@@ -222,13 +219,13 @@
             margin-bottom: 15px;
             border: none;
             border-radius: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ECEFF4;
             font-size: 1rem;
         }
 
         .form-card input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(216, 222, 233, 0.7);
         }
 
         @media (max-width: 768px) {
@@ -241,10 +238,62 @@
             }
             
             .stat-item {
-                margin-bottom: 20px;
+                min-width: 100%;
             }
         }
     </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+        <header class="glass-card">
+            <h1>Nord Glass Experience</h1>
+            <p>Modern UI design with the Nord color palette</p>
+        </header>
+
+        <main>
+            <div class="glass-card feature-card">
+                <h2>Premium Features</h2>
+                <p>Unlock exclusive content with our membership</p>
+                <div class="price-display">$9.99<span>/month</span></div>
+                <button class="cta-button" id="subscribeBtn">Subscribe Now</button>
+            </div>
+
+            <div class="glass-card stats-card">
+                <div class="stat-item">
+                    <i class="stat-icon fas fa-users"></i>
+                    <div class="stat-value" id="userCount">975</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="stat-icon fas fa-download"></i>
+                    <div class="stat-value" id="downloadCount">5,430</div>
+                    <div class="stat-label">Downloads</div>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="stat-icon fas fa-star"></i>
+                    <div class="stat-value" id="ratingValue">4.8</div>
+                    <div class="stat-label">Rating</div>
+                </div>
+            </div>
+
+            <div class="glass-card form-card">
+                <h2>Get Started</h2>
+                <form id="signupForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit" class="cta-button">Join Free</button>
+                </form>
+            </div>
+        </main>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -254,7 +303,7 @@
         });
 
         function animateCounters() {
-            const userTarget = 1250;
+            const userTarget = 975;
             const downloadTarget = 5430;
             const ratingTarget = 4.8;
             
@@ -262,17 +311,22 @@
             const downloadElement = document.getElementById('downloadCount');
             const ratingElement = document.getElementById('ratingValue');
             
+            // Reset values to 0 for animation
+            userElement.textContent = '0';
+            downloadElement.textContent = '0';
+            ratingElement.textContent = '0';
+            
             let userCount = 0;
             let downloadCount = 0;
             let ratingCount = 0;
             
             const userInterval = setInterval(() => {
-                userCount += 25;
+                userCount += 15;
                 if(userCount >= userTarget) {
                     userCount = userTarget;
                     clearInterval(userInterval);
                 }
-                userElement.textContent = userCount.toLocaleString();
+                userElement.textContent = userCount;
             }, 30);
             
             const downloadInterval = setInterval(() => {
@@ -309,7 +363,7 @@
                 button.textContent = 'Processing...';
                 setTimeout(() => {
                     button.textContent = 'Subscribed!';
-                    button.style.background = 'rgba(76, 175, 80, 0.5)';
+                    button.style.background = 'rgba(163, 190, 140, 0.4)';
                 }, 1500);
             });
         }
